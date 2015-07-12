@@ -1,0 +1,77 @@
+﻿@using MVC.App.Models
+@model Grades
+
+
+@{
+	var pre = ViewBag.GridPrefix ?? "md";
+    
+    var cols = ViewBag.LayoutColumns ?? 6;
+    
+    if (cols % 2 == 1) { throw new Exception("ViewBag.LayoutColumns is not even."); }
+    
+    var offset = (12 - cols) / 2;
+}
+
+<div class="row">
+  <div class="col-@pre-offset-@offset col-@pre-@cols">
+    <h2 class="page-header">
+	  Calificaciones
+	</h2>
+	<form method="post">
+		<div class="form-group">
+			<label>Nota Practica</label>
+			<div class="input-group input-group-lg">
+			      @Html.TextBoxFor(m => m.PracticeNote.Value,new {@class="form-control"})
+			      <span class="input-group-btn">
+			      	<a class="btn btn-default btn-xs">
+			      		<span>@Model.PracticeNote.Weight%</span>
+			      	</a>
+			      </span>
+			    </div><!-- /input-group -->
+		</div>
+
+		@for (var i = 1; i <= Model.Partials.Count; ++i)
+		{
+			<div class="form-group">
+				<label>Parcial @i</label>
+				<div class="input-group input-group-lg">
+			      @Html.TextBoxFor(m => m.Partials[i-1].Value,new {@class="form-control"})
+			      <span class="input-group-btn">
+			      	<a class="btn btn-default btn-xs">
+			      		<span>@Model.Partials[i-1].Weight%</span>
+			      	</a>
+			      </span>
+			    </div><!-- /input-group -->
+				
+			</div>
+		}
+
+		<div class="form-group">
+			<a href="/Grades/AddPartial?x=1" class="btn btn-lg btn-success form-control">
+			<span class="glyphicon glyphicon-plus-sign"></span>
+			<span>Agregar Parcial</span>
+		</a>
+		</div>
+
+
+		<div class="form-group">
+		<label>Examen Final</label>
+			<div class="input-group input-group-lg">
+			      @Html.TextBoxFor(m => m.FinalTest.Value,new {@class="form-control"})
+			      <span class="input-group-btn">
+			      	<a class="btn btn-default btn-xs">
+			      		<span>@Model.FinalTest.Weight%</span>
+			      	</a>
+			      </span>
+			    </div><!-- /input-group -->
+		</div>
+
+		<button class="btn btn-lg btn-primary col-xs-12">Calcular</button>
+			
+		
+	</form>
+
+  </div>
+</div>
+
+

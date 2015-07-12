@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="MVC.App/MVC.App.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="chromium" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MVC.App/Controllers/GradesController.cs">
+    <Files>
+      <File FileName="MVC.App/Views/Grades/Index.cshtml" Line="17" Column="48" />
+      <File FileName="MVC.App/Controllers/GradesController.cs" Line="38" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/luigi/Projects/MVC.App/MVC.App/Controllers/GradesController.cs" line="36" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

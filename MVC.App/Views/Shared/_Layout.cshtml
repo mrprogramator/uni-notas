@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="~/Resources/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="~/Resources/css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+	@Html.Partial("_NavBar")
+</div>
+<div id="main">
+	@RenderBody()
+</div>
+
+	<script src="~/Resources/js/jquery-2.1.4.min.js"></script>
+	<script src="~/Resources/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	<script src="~/Resources/js/myscripts.js"></script>
+</body>
+</html>
+
